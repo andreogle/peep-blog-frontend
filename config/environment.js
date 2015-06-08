@@ -29,6 +29,7 @@ module.exports = function(environment) {
       'style-src': "'self'",
       'media-src': "'self'"
     };
+    ENV.APP.API_URL = 'http://localhost:4000';
   }
 
   if (environment === 'test') {
@@ -44,7 +45,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.API_URL = process.env.API_URL;
   }
 
   return ENV;
